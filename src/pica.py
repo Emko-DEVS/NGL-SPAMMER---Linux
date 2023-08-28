@@ -87,9 +87,9 @@ def ngl():
         with concurrent.futures.ThreadPoolExecutor(max_workers=thread_count) as executor:
             for proxy in proxy_list:
                 if message_input:
-                    current_message = message_input  # Use the input message
+                    current_message = message_input
                 else:
-                    current_message = random.choice(messages)  # Use a random message from messages.txt
+                    current_message = random.choice(messages)
 
                 executor.submit(send_question, nglusername, current_message, {"http": proxy, "https": proxy})
                 Count -= 1
