@@ -46,4 +46,4 @@ if __name__ == "__main__":
     main()
 
 time.sleep(2)
-os.system("cd .. && path/to/venv/bin/python start.py")
+os.system("cd .. && python3 start.py")

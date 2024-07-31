@@ -35,11 +35,11 @@ def startup():
             print(f" {Fore.GREEN}about {Fore.WHITE}- {Fore.BLUE}about the developers{Fore.RESET}")
             print("")
         elif command == "proxy":
-            os.system("cd src && path/to/venv/bin/python proxyupdate.py")
+            os.system("cd src && python3 proxyupdate.py")
         elif command == "check":
-            os.system("cd src && path/to/venv/bin/python check.py htp.txt --threads 1000")
+            os.system("cd src && python3 check.py unchecked.txt --threads 1000")
         elif command == "start":
-            os.system("cd src && path/to/venv/bin/python pica.py")
+            os.system("cd src && python3 pica.py")
         elif command == "exit": 
             break
         else:

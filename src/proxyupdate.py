@@ -30,6 +30,6 @@ with open('http.txt', 'w') as f:
         f.write(proxy + '\n')
 
 
-os.rename('http.txt', 'htp.txt')
+os.rename('http.txt', 'unchecked.txt')
 time.sleep(4)
-os.system("cd .. && path/to/venv/bin/python start.py")
+os.system("cd .. && python3 start.py")

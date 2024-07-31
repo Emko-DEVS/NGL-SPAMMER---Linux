@@ -97,55 +97,11 @@ def ngl():
                     break
 
     print("All tasks completed.")
-    os.system("cd .. && path/to/venv/bin/python start.py")
+    os.system("cd .. && python3 start.py")
 
-try:
-    url = 'http://54.36.239.97:20008/api/client'
 
-    # Load license key from file
-    with open('license.key', 'r') as license_file:
-        licensekey = license_file.read().strip()
+ngl()
 
-    product = 'NGL-SPAMMER'
-    version = '1.0'
-    api_key = 'nHvX7wS8TR27Rqk4S1EyDW68DX9z9h4k4Me2dCDv9Y'
-    hwid = hashlib.sha256((os.name + getpass.getuser() + gma.get_mac_address() + str(hex(uuid.getnode()))).encode()).hexdigest()
-
-    headers = {'Authorization': api_key}
-    data = {
-        'licensekey': licensekey,
-        'product': product,
-        'version': version,
-        'hwid': hwid
-    }
-
-    response = requests.post(url, json=data, headers=headers)
-
-    res_data = response.json()
-
-    if 'status_code' not in res_data or 'status_id' not in res_data:
-        print(f" {Fore.RED}(( ! )) {Fore.RESET}Your license is invalid.")
-        time.sleep(4)
-        os.system("cls || clear")
-        os.system("cd .. && path/to/venv/bin/python start.py")
-
-    if res_data.get('status_overview') != "success":
-        print(f" {Fore.RED}(( ! )) {Fore.RESET}Your License is invalid")
-        print(" ")
-        print(" |- Reason: " + res_data.get('status_msg'))
-        print(" |- Status Code: \x1b[31m" + str(res_data.get('status_code')) + "\x1b[0m")
-        time.sleep(4)
-        os.system("cls || clear")
-        os.system("cd .. && path/to/venv/bin/python start.py")
-    else:
-        ngl()
-
-except Exception as err:
-    print("Authentication failed")
-    print(err)
-    time.sleep(3)
-    os.system("cls || clear")
-    os.system("cd .. && path/to/venv/bin/python start.py")
 
 
 
